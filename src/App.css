@@ -1,17 +1,30 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 .card-container{
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 18px;
   background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
   backdrop-filter: blur(10px); /* Creates the frosted glass effect */
 }
 .card {
   border: 1px black solid;
   padding: 2em;
+  height: 150px;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.card img {
+  
+}
+.card-image {
+  height: 100%;
 }
