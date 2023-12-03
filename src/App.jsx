@@ -80,9 +80,12 @@ function App() {
       </p>
       <p className="scoreBoard">Score: {score}</p>
       <div className="card-container">
-        <Card characters={characters} id={0} onClick={handleClick} />
+        {characters.map((character, index) => (
+          <Card key={index} character={character} onClick={handleClick} />
+        ))}
+        {/* <Card characters={characters} id={0} onClick={handleClick} />
         <Card characters={characters} id={1} onClick={handleClick} />
-        <Card characters={characters} id={2} onClick={handleClick} />
+        <Card characters={characters} id={2} onClick={handleClick} /> */}
       </div>
       <button className="reset" onClick={reset}>
         Get New character
