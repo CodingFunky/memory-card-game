@@ -9,6 +9,7 @@ function App() {
   const [mode, setMode] = useState(5);
   const [characters, setCharacters] = React.useState([]);
   const [score, setScore] = React.useState(0);
+  const [streak, setStreak] = React.useState(0);
   const [clickedCharacters, setClickedCharacters] = React.useState([]);
   const [result, setResult] = React.useState("");
 
@@ -58,6 +59,7 @@ function App() {
     if (clickedCharacters.includes(id)) {
       // game over/reset game
       setResult("You lose!");
+      setStreak(0);
       reset();
     } else {
       //update list or win game
@@ -66,6 +68,7 @@ function App() {
       if (score === mode - 1) {
         console.log("You win!");
         setResult("Winner!");
+        setStreak((prev) => prev + 1);
         reset();
       }
     }
@@ -79,6 +82,7 @@ function App() {
         Click all pictures without clicking the same one twice!
       </p>
       <p className="scoreBoard">Score: {score}</p>
+      <p className="'streak">Win Streak {streak}</p>
       <div className="card-container">
         {characters.map((character, index) => (
           <Card key={index} character={character} onClick={handleClick} />
