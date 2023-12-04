@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   const [allCharacters, setAllCharacters] = React.useState({});
-  const [mode, setMode] = useState(3);
+  const [mode, setMode] = useState(5);
   const [characters, setCharacters] = React.useState([]);
   const [score, setScore] = React.useState(0);
   const [clickedCharacters, setClickedCharacters] = React.useState([]);
@@ -83,9 +83,6 @@ function App() {
         {characters.map((character, index) => (
           <Card key={index} character={character} onClick={handleClick} />
         ))}
-        {/* <Card characters={characters} id={0} onClick={handleClick} />
-        <Card characters={characters} id={1} onClick={handleClick} />
-        <Card characters={characters} id={2} onClick={handleClick} /> */}
       </div>
       <button className="reset" onClick={reset}>
         Get New character

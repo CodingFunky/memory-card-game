@@ -7,24 +7,40 @@
 .card-container{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 18px;
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-  backdrop-filter: blur(10px); /* Creates the frosted glass effect */
 }
 .card {
-  border: 1px black solid;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   padding: 2em;
   height: 150px;
   width: 15%;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  position: relative; /* Needed for pseudo-element positioning */
+  overflow: hidden;
 }
 .card img {
   
 }
 .card-image {
   height: 100%;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50%; 
+  left: -50%;
+  width: 200%; 
+  height: 200%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.8), transparent 50%); 
+  transform: rotate(30deg);
+  transition: transform 0.5s;
+}
+
+.card:hover::before {
+  transform: rotate(100deg);
 }
